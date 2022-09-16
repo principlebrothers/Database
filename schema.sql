@@ -8,6 +8,7 @@ CREATE TABLE animals (
     weigth_kg DECIMAL NOT NULL
 );
 
+-- Day 3: More queries
 -- Create a table known as owners
 CREATE TABLE owners (
     id BIGSERIAL NOT NULL PRIMARY KEY,
@@ -41,3 +42,27 @@ ADD
     COLUMN owner_id INT,
 ADD
     FOREIGN KEY (owner_id) REFERENCES owners(id) ON DELETE CASCADE;
+
+-- Day 4: Add "join table" for visits
+-- Create vets table
+CREATE TABLE vets (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    date_of_graduation DATE
+);
+
+-- Create specializations table
+CREATE TABLE specializations (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    species_id INT,
+    vets_id INT
+);
+
+--Create visits table
+CREATE TABLE visits(
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    animals_id INT,
+    vets_id INT,
+    date_of_visit DATE NOT NULL
+);
