@@ -8,7 +8,7 @@ CREATE TABLE animals (
     weigth_kg DECIMAL NOT NULL
 );
 
--- Day 3: More queries
+-- Day 3: Join tables
 -- Create a table known as owners
 CREATE TABLE owners (
     id BIGSERIAL NOT NULL PRIMARY KEY,
